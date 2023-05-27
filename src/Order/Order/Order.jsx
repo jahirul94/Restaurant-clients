@@ -10,10 +10,10 @@ import { Helmet } from "react-helmet-async";
 
 const Order = () => {
     const [menu] = useMenu();
-    const categories = ["salad" , "pizza" , "soup" , "dessert" , "drinks"]
+    const categories = ["salad", "pizza", "soup", "dessert", "drinks"]
     const { category } = useParams();
     const initialIndex = categories.indexOf(category)
-    const [tabIndex , setTabIndex] = useState(initialIndex)
+    const [tabIndex, setTabIndex] = useState(initialIndex)
     const dessert = menu.filter(items => items.category === "dessert")
     const pizza = menu.filter(items => items.category === "pizza")
     const salad = menu.filter(items => items.category === "salad")
@@ -23,7 +23,7 @@ const Order = () => {
     return (
         <div>
             <Helmet>
-                 <title>Bistro Boss | Order Food </title>
+                <title>Bistro Boss | Order Food </title>
             </Helmet>
             <Cover img={orderBg} title="Order Foods"></Cover>
             <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
